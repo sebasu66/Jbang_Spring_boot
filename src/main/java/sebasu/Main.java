@@ -10,7 +10,7 @@ package src.main.java.sebasu;
 ///DEPS org.springframework.boot:spring-boot-starter-data-rest:2.3.4.RELEASE
 ////DEPS org.springframework.boot:spring-boot-starter-data-mongodb:2.3.4.RELEASE
 //JAVA 11
-//SOURCES Hello.java
+//SOURCES Hello.java Html.java idBased.java JsonToHtml.java
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -20,8 +20,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        //set server to localhost:3030
-        System.setProperty("server.port", "3030");
+        //set server to localhost:3000
+        System.setProperty("server.port", "3000");
         System.setProperty("server.IP", "localhost");
 
 

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /* set the body to cover the full page */
+        body {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+
+            /* set the background color to light gray */
+            background-color: #d3d3d3;
+        }
+
+        /* hide the canvas by default */
+        canvas {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<!-- create the canvas -->
+<canvas id="gridCanvas"></canvas>
+
+<!-- create the edit button -->
+<button id="editButton">Edit</button>
+
+<script>
+    // create a global variable for the edit mode
+    let editMode = false;
+
+    // get the canvas and its context
+    var canvas = document.getElementById("gridCanvas");
+    var ctx = canvas.getContext("2d");
+
+    // set the size of the canvas
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    // handle the load event for the canvas
+    canvas.addEventListener("load", function() {
+        // generate the grid of dots
+        for (var y = 0; y < canvas.height; y += 10) {
+            for (var x = 0; x < canvas.width; x += 10) {
+                // set the fill style to light blue
+                ctx.fillStyle = "lightblue";
+
+                // draw the dot at the specified position
+                ctx.beginPath();
+                ctx.arc(x + 5, y + 5, 5, 0, 2 * Math.PI);
+                ctx.fill();
+            }
+        }
+    });
+
+    // get the edit button
+    var editButton = document.getElementById("editButton");
+
+    // handle the click event
+    editButton.addEventListener("click", function() {
+        // toggle the edit mode
+        editMode = !editMode;
+
+        // show or hide the canvas depending on the edit mode
+        if (editMode) {
+            canvas.style.display = "block";
+        } else {
+            canvas.style.display = "none";
+        }
+    });
+</script>
+</body>
+</html>
