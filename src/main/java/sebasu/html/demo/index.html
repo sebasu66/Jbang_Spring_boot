@@ -27,7 +27,7 @@
             #3e260e, #4b2b0c, #592f0a);}.raised-normal {border-radius: 25pc; background: linear-gradient(145deg, #49290d,
  #1d160f); box-shadow: 10px 10px 15px #462407,
              -10px -10px 15px #201912;}.hover {background: linear-gradient(145deg, #533216,
- #3d2e1e);}#animated-text {font-size: 76px; color: whitesmoke; font-family: 'Chivo Mono', monospace;}.text-span {display: inline-block; transition: all 0.25s ease; opacity: 0;}</style>
+ #3d2e1e);}#animated-text {font-size: 76px; color: whitesmoke; font-family: 'Chivo Mono', monospace;}.text-span {display: inline-block; transition: all 0.25s ease; opacity: 0;}.container {width: 100%; height: 800px; overflow-y: scroll; opacity: 1; color: #fff;}.list {margin-right: 25px;}.filter-container {display: flex; justify-content: space-between; align-items: center; padding: 20px;}#search {width: 200px; height: 30px; border: none; background-color: #555; color: #fff; padding: 0 10px;}.tag-selector {display: flex;}.tag {background-color: #555; color: #fff; border: none; padding: 10px 20px; margin-right: 10px; cursor: pointer;}.tag:hover {background-color: #777;}.item {list-style: none; display: flex; align-items: center; padding: 20px; border-bottom: 1px solid #444;}.thumbnail {width: 250px; height: 250px; border-radius: 50%; margin-right: 20px;}.title {color: #fff; font-size: 18px; text-decoration: none;}.tags {display: flex; margin-right: 20px;}.tag {background-color: #555; color: #fff; border-radius: 10px; padding: 5px 10px; margin-right: 10px; font-size: 14px;}.description {flex-grow: 1; margin-right: 20px; font-size: 14px;}.fa-star {color: #555; font-size: 18px;}.active {color: #ffd700;}.tag1 {background-color: #008080;}.tag2 {background-color: #4b0082;}.tag3 {background-color: #ffa07a;}</style>
     <script type="text/javascript" class="silex-script">var text = '{my}Bookmarks|dev';
 var textSpans = [];
 var i =0;
@@ -46,14 +46,35 @@ function createTextSpans() {
 
 
 window.addEventListener('load', function() {
-  // Your code here
-
-
-createTextSpans();
-
+    createTextSpans();
 }
-);</script>
-    <style class="silex-inline-styles">.body-initial {background-color: rgba(255,255,255,1); position: static;}.silex-id-1478366444112-1 {background-color: transparent; position: static; margin-top: -1px;}.silex-id-1478366444112-0 {background-color: transparent; min-height: 100px; position: relative; margin-left: auto; margin-right: auto;}.silex-id-1474394621033-3 {position: static; margin-top: -1px;}.silex-id-1474394621032-2 {background-color: transparent; min-height: 600px; position: relative; margin-left: auto; margin-right: auto;}.silex-id-1478366450713-3 {background-color: transparent; position: static; margin-top: -1px;}.silex-id-1478366450713-2 {background-color: transparent; min-height: 100px; position: relative; margin-left: auto; margin-right: auto;}.silex-id-1442914737143-3 {width: 241px; top: 26px; left: 494px; min-height: 51px; position: absolute;}.silex-id-1671515340446-1 {width: 314px; min-height: 110px; background-color: rgb(255, 255, 255); position: absolute; top: 320px; left: 346px;}.silex-id-1671518656670-3 {width: 787px; min-height: 159px; background-color: transparent; position: static; margin-left: 5px; margin-top: 5px; margin-bottom: 5px; margin-right: 5px;}.silex-id-1671520119323-4 {width: 823px; min-height: 159px; background-color: transparent; position: static; display: block;}.silex-id-1671525055538-5 {width: 100px; min-height: 100px; position: absolute;}@media only screen and (max-width: 480px) {}</style>
+);
+
+function filterList(tag) {
+  var items = document.getElementsByClassName("item");
+  for (var i = 0; i < items.length; i++) {
+    if (tag == "all" || items[i].classList.contains(tag)) {
+      items[i].style.display = "block";
+    } else {
+      items[i].style.display = "none";
+    }
+  }
+}
+
+var searchInput = document.getElementById("search");
+searchInput.addEventListener("keyup", function (event) {
+  var searchText = event.target.value.toLowerCase();
+  var items = document.getElementsByClassName("item");
+  for (var i = 0; i < items.length; i++) {
+    var itemText = items[i].textContent.toLowerCase();
+    if (itemText.indexOf(searchText) > -1) {
+      items[i].style.display = "block";
+    } else {
+      items[i].style.display = "none";
+    }
+  }
+});</script>
+    <style class="silex-inline-styles">.body-initial {background-color: rgba(255,255,255,1); position: static;}.silex-id-1478366444112-1 {background-color: transparent; position: static; margin-top: -1px;}.silex-id-1478366444112-0 {background-color: transparent; min-height: 100px; position: relative; margin-left: auto; margin-right: auto;}.silex-id-1474394621033-3 {position: static; margin-top: -1px;}.silex-id-1474394621032-2 {background-color: transparent; min-height: 600px; position: relative; margin-left: auto; margin-right: auto;}.silex-id-1478366450713-3 {background-color: transparent; position: static; margin-top: -1px;}.silex-id-1478366450713-2 {background-color: transparent; min-height: 100px; position: relative; margin-left: auto; margin-right: auto;}.silex-id-1442914737143-3 {width: 241px; top: 26px; left: 494px; min-height: 51px; position: absolute;}.silex-id-1671518656670-3 {width: 787px; min-height: 159px; background-color: transparent; position: static; margin-left: 5px; margin-top: 5px; margin-bottom: 5px; margin-right: 5px;}.silex-id-1671529371084-0 {width: 1190px; min-height: 600px; background-color: transparent; position: static;}.silex-id-1671530034922-1 {min-height: 80px; background-color: transparent; position: static; top: 6px; left: 385px; margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px;}@media only screen and (max-width: 480px) {}</style>
     <title></title>
     
 
@@ -73,10 +94,52 @@ createTextSpans();
 
 
     <section data-silex-type="container-element" class="container-element editable-style silex-id-1478366444112-1 section-element prevent-resizable page-page-1 paged-element" data-silex-id="silex-id-1478366444112-1">
-        <div data-silex-type="container-element" class="editable-style silex-element-content silex-id-1478366444112-0 container-element website-width" data-silex-id="silex-id-1478366444112-0"></div>
+        <div data-silex-type="container-element" class="editable-style silex-element-content silex-id-1478366444112-0 container-element website-width" data-silex-id="silex-id-1478366444112-0"><div data-silex-type="html-element" class="editable-style html-element silex-id-1671530034922-1" data-silex-id="silex-id-1671530034922-1" style=""><div class="silex-element-content"><div id="animated-text"></div>
+</div></div></div>
     </section>
     <section data-silex-type="container-element" class="container-element editable-style silex-id-1474394621033-3 section-element prevent-resizable page-page-1 paged-element" data-silex-id="silex-id-1474394621033-3">
-        <div data-silex-type="container-element" class="editable-style silex-element-content silex-id-1474394621032-2 container-element selected website-width" data-silex-id="silex-id-1474394621032-2"><div data-silex-type="container-element" class="editable-style container-element silex-id-1671515340446-1 raised-normal" data-silex-id="silex-id-1671515340446-1" style=""></div><div data-silex-type="container-element" class="editable-style container-element silex-id-1671520119323-4" data-silex-id="silex-id-1671520119323-4" style=""><div data-silex-type="html-element" class="editable-style html-element silex-id-1671518656670-3" data-silex-id="silex-id-1671518656670-3" style=""><div class="silex-element-content"><div id="animated-text"></div>
+        <div data-silex-type="container-element" class="editable-style silex-element-content silex-id-1474394621032-2 container-element selected website-width" data-silex-id="silex-id-1474394621032-2"><div data-silex-type="html-element" class="editable-style html-element silex-id-1671529371084-0" data-silex-id="silex-id-1671529371084-0" style=""><div class="silex-element-content"><div class="container">
+  <div class="filter-container">
+    <input type="text" id="search" placeholder="Search...">
+    <div class="tag-selector">
+      <button class="tag" onclick="filterList('all')">All</button>
+      <button class="tag" onclick="filterList('tag1')">Tag 1</button>
+      <button class="tag" onclick="filterList('tag2')">Tag 2</button>
+      <button class="tag" onclick="filterList('tag3')">Tag 3</button>
+    </div>
+  </div>
+  <ul id="list" class="list">
+    <li class="item tag1">
+      <img src="thumbnail1.jpg" class="thumbnail">
+      <a href="#" class="title">Item 1</a>
+      <div class="tags">
+        <span class="tag tag1">Tag 1</span>
+        <span class="tag tag2">Tag 2</span>
+      </div>
+      <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus nisi vitae quam finibus, sit amet dignissim dui tincidunt.</p>
+      <i class="fas fa-star active"></i>
+    </li>
+    <li class="item tag2">
+      <img src="thumbnail2.jpg" class="thumbnail">
+      <a href="#" class="title">Item 2</a>
+      <div class="tags">
+        <span class="tag tag2">Tag 2</span>
+        <span class="tag tag3">Tag 3</span>
+      </div>
+      <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus nisi vitae quam finibus, sit amet dignissim dui tincidunt.</p>
+      <i class="fas fa-star"></i>
+    </li>
+    <li class="item tag3">
+      <img src="thumbnail3.jpg" class="thumbnail">
+      <a href="#" class="title">Item 3</a>
+      <div class="tags">
+        <span class="tag tag3">Tag 3</span>
+        <span class="tag tag1">Tag 1</span>
+      </div>
+      <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus nisi vitae quam finibus, sit amet dignissim dui tincidunt.</p>
+      <i class="fas fa-star active"></i>
+    </li>
+  </ul>
 </div></div></div></div>
     </section>
     <section data-silex-type="container-element" class="container-element editable-style silex-id-1478366450713-3 section-element prevent-resizable page-page-1 paged-element" data-silex-id="silex-id-1478366450713-3">
@@ -103,4 +166,5 @@ createTextSpans();
 
 
 
-<div data-silex-type="text-element" class="editable-style text-element silex-id-1671525055538-5" data-silex-id="silex-id-1671525055538-5"><div class="silex-element-content normal"><p>New text box</p></div></div></body></html>
+<div data-silex-type="html-element" class="editable-style html-element silex-id-1671518656670-3" data-silex-id="silex-id-1671518656670-3"><div class="silex-element-content"><div id="animated-text"></div>
+</div></div></body></html>
