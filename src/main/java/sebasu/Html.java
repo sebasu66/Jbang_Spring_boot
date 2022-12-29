@@ -13,7 +13,7 @@ public class Html {
 
     //read and parse html file located at /html/demo/home.html
     static String getHtmlContent(String fileName){
-        File file = new File("html/demo/" + fileName + ".html");
+        File file = new File("./html/demo/" + fileName + ".html");
         try {
             return new String(Files.readAllBytes(file.toPath()));
         } catch (IOException e) {
