@@ -1,0 +1,173 @@
+<!DOCTYPE html><html class="" lang=""><head><script type="text/javascript" class="silex-json-styles" data-silex-static="">
+    window.silex = window.silex || {}
+    window.silex.data = {"site":{"width":1200},"pages":[{"id":"page-page-1","displayName":"Page 1","link":{"linkType":"LinkTypePage","href":"#!page-page-1"},"canDelete":true,"canProperties":true,"canMove":true,"canRename":true,"opened":false}]}</script>
+    <meta charset="UTF-8">
+    <!-- generator meta tag -->
+    <!-- leave this for stats and Silex version check -->
+    <meta name="generator" content="Silex v2.2.14">
+    <!-- End of generator meta tag -->
+    <script type="text/javascript" src="https://editor.silex.me/static/2.12/jquery.js" data-silex-static=""></script>
+    <script type="text/javascript" src="https://editor.silex.me/static/2.12/jquery-ui.js" data-silex-static="" data-silex-remove-publish=""></script>
+    <script type="text/javascript" src="https://editor.silex.me/static/2.12/pageable.js" data-silex-static="" data-silex-remove-publish=""></script>
+    <script type="text/javascript" src="https://editor.silex.me/static/2.12/front-end.js" data-silex-static=""></script>
+    <link rel="stylesheet" href="https://editor.silex.me/static/2.12/normalize.css" data-silex-static="">
+    <link rel="stylesheet" href="https://editor.silex.me/static/2.12/front-end.css" data-silex-static="">
+
+    <style class="silex-style">.bgnew {background-image: linear-gradient(to right bottom,
+				#035337, #005d5c, #00648d, #0064b9, #2a57c9, #594abb, #733caa, #852c98, #5b328a, #353076, #152a5d, #022142);}.bg-dark-orange {background-image: linear-gradient(to right bottom,
+     #050505,
+     #090909,
+     #0d0c0c,
+      #110f0f,
+       #131211,
+        #1a1611,
+         #201912,
+          #261c12,
+           #322110,
+            #3e260e, #4b2b0c, #592f0a);}.dark-top {background-position-y: 45px; background-position-x: center; background-size: ;border-width: 3px; border-bottom: white; background-image: radial-gradient(circle, #537474, #4b666a, #44585f, #3e4a52, #373d44, #32363c, #2d2f34, #27282c, #232428, #1f2024, #1b1c21, #17181d);}.raised-normal {border-radius: 25pc; background: linear-gradient(145deg, #49290d,
+ #1d160f); box-shadow: 10px 10px 15px #462407,
+             -10px -10px 15px #201912;}.hover {background: linear-gradient(145deg, #533216,
+ #3d2e1e);}#animated-text {align-content: center; font-size: 76px; color: whitesmoke; font-family: 'Chivo Mono', monospace;}.text-span {display: inline-block; transition: all 0.25s ease; opacity: 0;}.container {width: 100%; height: 800px; overflow-y: scroll; opacity: 1; color: #fff;}.list {margin-right: 25px;}.filter-container {display: flex; justify-content: space-between; align-items: center; padding: 20px;}#search {width: 200px; height: 30px; border: none; background-color: #555; color: #fff; padding: 0 10px;}.tag-selector {display: flex;}.tag {background-color: #555; color: #fff; border: none; padding: 10px 20px; margin-right: 10px; cursor: pointer;}.tag:hover {background-color: #777;}.item {list-style: none; display: flex; align-items: center; padding: 20px; border-bottom: 1px solid #444;}.thumbnail {width: 250px; height: 250px; border-radius: 50%; margin-right: 20px;}.title {color: #fff; font-size: 18px; text-decoration: none;}.tags {display: flex; margin-right: 20px;}.tag {background-color: #555; color: #fff; border-radius: 10px; padding: 5px 10px; margin-right: 10px; font-size: 14px;}.description {flex-grow: 1; margin-right: 20px; font-size: 14px;}.fa-star {color: #555; font-size: 18px;}.active {color: #ffd700;}.tag1 {background-color: #008080;}.tag2 {background-color: #4b0082;}.tag3 {background-color: #ffa07a;}</style>
+    <script type="text/javascript" class="silex-script">var text = '{my}Bookmarks|dev';
+var textSpans = [];
+var i =0;
+function createTextSpans() {
+  
+    var textSpan = document.createElement('span');
+    textSpan.classList.add('text-span');
+    textSpan.textContent = text[i];
+    textSpans.push(textSpan);
+    document.getElementById('animated-text').appendChild(textSpan);
+        textSpans[i].style.opacity = 1;
+        if(i>0 && i<3){
+            textSpans[i].style.color = "red";
+        }
+    textSpans[i].style.transform = 'translateX(0)';
+    if(i < text.length){ i++;
+  setTimeout(createTextSpans, 100);}
+}
+
+
+window.addEventListener('load', function() {
+    createTextSpans();
+}
+);
+
+function filterList(tag) {
+  var items = document.getElementsByClassName("item");
+  for (var i = 0; i < items.length; i++) {
+    if (tag == "all" || items[i].classList.contains(tag)) {
+      items[i].style.display = "block";
+    } else {
+      items[i].style.display = "none";
+    }
+  }
+}
+
+var searchInput = document.getElementById("search");
+searchInput.addEventListener("keyup", function (event) {
+  var searchText = event.target.value.toLowerCase();
+  var items = document.getElementsByClassName("item");
+  for (var i = 0; i < items.length; i++) {
+    var itemText = items[i].textContent.toLowerCase();
+    if (itemText.indexOf(searchText) > -1) {
+      items[i].style.display = "block";
+    } else {
+      items[i].style.display = "none";
+    }
+  }
+});</script>
+    <style class="silex-inline-styles">.body-initial {background-color: rgba(0,0,0,1); position: static; background-position: center center; background-repeat: no-repeat; background-attachment: fixed; background-size: cover;}.silex-id-1478366444112-1 {background-color: transparent; position: static; margin-top: -1px; background-image: url(web%20top.png); background-attachment: fixed; background-size: contain; background-repeat: no-repeat;}.silex-id-1478366444112-0 {background-color: transparent; min-height: 456.58984375px; position: relative; margin-left: auto; margin-right: auto; background-attachment: fixed; background-size: cover;}.silex-id-1474394621033-3 {position: static; margin-top: -1px;}.silex-id-1474394621032-2 {background-color: transparent; min-height: 600px; position: relative; margin-left: auto; margin-right: auto;}.silex-id-1478366450713-3 {background-color: transparent; position: static; margin-top: -1px;}.silex-id-1478366450713-2 {background-color: transparent; min-height: 100px; position: relative; margin-left: auto; margin-right: auto;}.silex-id-1442914737143-3 {width: 241px; top: 26px; left: 494px; min-height: 51px; position: absolute;}.silex-id-1671518656670-3 {width: 787px; min-height: 159px; background-color: transparent; position: static; margin-left: 5px; margin-top: 5px; margin-bottom: 5px; margin-right: 5px;}.silex-id-1671529371084-0 {width: 1190px; min-height: 800px; background-color: transparent; position: static;}.silex-id-1671530034922-1 {min-height: 80px; background-color: transparent; position: static; top: 6px; left: 385px; margin-left: 10px; margin-right: 10px; margin-top: 70px; margin-bottom: 10px;}@media only screen and (max-width: 480px) {}</style>
+    <title></title>
+    
+
+    
+<style class="silex-prodotype-style" data-style-id="all-style">.text-element > .silex-element-content {font-family: 'Roboto', sans-serif;}</style><link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" class="silex-custom-font"><meta name="viewport" content="width=device-width, initial-scale=1"><style class="silex-style-settings">.website-width {width: 1200px;}@media (min-width: 481px) {.silex-editor {min-width: 1400px;}}</style><!-- Silex HEAD tag do not remove --><link rel="preload" href="https://chat.openai.com/fonts/Signifier-Regular.otf" as="font" crossorigin="">
+<!-- End of Silex HEAD tag do not remove --></head>
+
+<body data-silex-id="body-initial" class="body-initial all-style enable-mobile prevent-resizable prevent-selectable editable-style silex-runtime" data-silex-type="container-element" style="">
+    
+
+
+
+
+
+
+
+
+
+    
+    <section data-silex-type="container-element" class="container-element editable-style silex-id-1478366444112-1 section-element prevent-resizable page-page-1 paged-element" data-silex-id="silex-id-1478366444112-1" style="">
+        
+    <div data-silex-type="container-element" class="editable-style silex-element-content silex-id-1478366444112-0 container-element website-width" data-silex-id="silex-id-1478366444112-0" style="" id="a"><div data-silex-type="html-element" class="editable-style html-element silex-id-1671530034922-1" data-silex-id="silex-id-1671530034922-1" style=""><div class="silex-element-content"><div id="animated-text"></div>
+</div></div></div></section><section data-silex-type="container-element" class="container-element editable-style silex-id-1474394621033-3 section-element prevent-resizable page-page-1 paged-element" data-silex-id="silex-id-1474394621033-3" style="">
+        <div data-silex-type="container-element" class="editable-style silex-element-content silex-id-1474394621032-2 container-element selected website-width" data-silex-id="silex-id-1474394621032-2" style=""><div data-silex-type="html-element" class="editable-style html-element silex-id-1671529371084-0" data-silex-id="silex-id-1671529371084-0" style=""><div class="silex-element-content"><div class="container">
+  <div class="filter-container">
+    <input type="text" id="search" placeholder="Search...">
+    <div class="tag-selector">
+      <button class="tag" onclick="filterList('all')">All</button>
+      <button class="tag" onclick="filterList('tag1')">Tag 1</button>
+      <button class="tag" onclick="filterList('tag2')">Tag 2</button>
+      <button class="tag" onclick="filterList('tag3')">Tag 3</button>
+    </div>
+  </div>
+  <ul id="list" class="list">
+    <li class="item tag1">
+      <img src="thumbnail1.jpg" class="thumbnail">
+      <a href="#" class="title">Item 1</a>
+      <div class="tags">
+        <span class="tag tag1">Tag 1</span>
+        <span class="tag tag2">Tag 2</span>
+      </div>
+      <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus nisi vitae quam finibus, sit amet dignissim dui tincidunt.</p>
+      <i class="fas fa-star active"></i>
+    </li>
+    <li class="item tag2">
+      <img src="thumbnail2.jpg" class="thumbnail">
+      <a href="#" class="title">Item 2</a>
+      <div class="tags">
+        <span class="tag tag2">Tag 2</span>
+        <span class="tag tag3">Tag 3</span>
+      </div>
+      <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus nisi vitae quam finibus, sit amet dignissim dui tincidunt.</p>
+      <i class="fas fa-star"></i>
+    </li>
+    <li class="item tag3">
+      <img src="thumbnail3.jpg" class="thumbnail">
+      <a href="#" class="title">Item 3</a>
+      <div class="tags">
+        <span class="tag tag3">Tag 3</span>
+        <span class="tag tag1">Tag 1</span>
+      </div>
+      <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus nisi vitae quam finibus, sit amet dignissim dui tincidunt.</p>
+      <i class="fas fa-star active"></i>
+    </li>
+  </ul>
+</div></div></div></div>
+    </section>
+    <section data-silex-type="container-element" class="container-element editable-style silex-id-1478366450713-3 section-element prevent-resizable page-page-1 paged-element" data-silex-id="silex-id-1478366450713-3">
+        <div data-silex-type="container-element" class="editable-style silex-element-content silex-id-1478366450713-2 container-element website-width" data-silex-id="silex-id-1478366450713-2">
+
+            <div data-silex-id="silex-id-1442914737143-3" class="editable-style silex-id-1442914737143-3 text-element" data-silex-type="text-element">
+                <div class="silex-element-content normal"><p>Powered by <a href="https://www.silex.me/" target="_blank" title="Silex website builder,  free and open source" linktype="LinkTypeExternal">Silex website builder</a></p></div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div data-silex-type="html-element" class="editable-style html-element silex-id-1671518656670-3" data-silex-id="silex-id-1671518656670-3"><div class="silex-element-content"><div id="animated-text"></div>
+</div></div></body></html>
